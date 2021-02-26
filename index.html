@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tareas</title>
+	<style type="text/css">
+		*{
+	margin: 0;
+	padding: 0;
+	font-family: "arial";
+}
+body {
+	background: #ECECEC;
+
+	
+}
+
+h1, form, .lista   {
+	background: #B9E4BB;
+	width: 80%;
+	margin: 10px auto;
+	color: black;
+}
+
+h1 {
+	text-align: center;
+	padding: 10px 0;
+}
+form {
+	width: 70%;
+	padding: 30px 5%;
+
+}
+form .caja {
+	width: 100%;
+	padding: 10px 5%;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+form .caja4 {
+	width: 100%;
+	padding: 10px 5%;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	color: red;
+	border: 2px solid red;
+	
+
+}
+form .boton {
+	width: 40%;
+	padding: 10px 5%;
+	margin: 0px 25%;
+}
+.lista ul {
+	list-style: none;
+}
+.lista .antes1 li {
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
+.lista .antes1 .a {
+	padding: 10px;
+	border-bottom: 1px solid black;
+	text-decoration:line-through;
+}
+
+	</style>
+
+</head>
+<body>
+	<div class="Titu" id="titulo">
+		<h1>Lista de Tareas</h1>
+	</div>
+	<div class="añade" id="formulario">
+		<form>
+			<input class="caja" id="box" type="text" name="" placeholder="Agrega una tarea">
+			<br>
+			<input class="boton" id="agregar" type="submit" name="" value="Agregar">
+		</form>
+	</div>
+	<div class="lista" id="Tareas">
+		<ul class="antes1" id="lista">
+			<li>Tarea #1</li>
+			<li>Tarea #2</li>
+			<li>Tarea #3</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+box.value;
+var colocar = function (e) {
+
+	if (box.value=="" || box.value=="Agrega una tarea valida..." ) {
+		box.value= "Agrega una tarea valida...";
+		var error1 = document.getElementById('box');
+		error1.setAttribute("class","caja4")
+		e.preventDefault();
+		var borrar = function () {
+			box.value="";
+			var error2 = document.getElementById('box');
+		error2.setAttribute("class","caja");
+		}
+		box.addEventListener("focus",borrar);
+
+	} 
+	else {
+
+	var Ntarea = document.createElement("li");
+	var contenido=document.createTextNode("holeei");
+	Ntarea.appendChild(contenido);
+	var lista=document.getElementById('lista');
+	lista.appendChild(Ntarea);
+	contenido.textContent = box.value;
+	e.preventDefault();
+	for (var i = 0; i <= elista.length-1; i++) {
+	elista[i].addEventListener("click", holiii);
+	};
+	box.value="";
+	}
+};
+
+
+
+var agregar = document.getElementById('agregar');
+
+agregar.addEventListener("click",colocar);
+
+
+
+var elista = document.getElementsByTagName('li');
+
+var holiii = function () {
+	
+	this.className="a";	
+}		
+
+for (var i = 0; i <= elista.length-1; i++) {
+	elista[i].addEventListener("click", holiii);
+}
+
+
+		
+	</script>
+</body>
+</html>
